@@ -1,13 +1,55 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer base {
+  form,
+  form + div {
+    @apply flex justify-between items-center p-5;
+  }
+
+  form + div {
+    @apply sm:border-none border-t-2 border-gray-500 border-dashed;
+  }
+
+  input {
+    @apply bg-transparent outline-none border rounded-md w-44 py-2 px-4 border-r-0 rounded-tr-none rounded-br-none;
+  }
+
+  img {
+    @apply border bg-[#e10000] rounded-full;
+  }
+
+  p,
+  h2 {
+    @apply font-serif font-semibold;
+  }
+
+  h3 {
+    @apply font-mono font-extralight;
+  }
+}
+
+@layer components {
+  .responsive-box {
+    @apply flex flex-col sm:gap-5 px-5 gap-0 sm:w-[80ch] w-[100%];
+  }
+
+  .black-box {
+    @apply bg-[#000000b4] rounded-md;
+  }
+
+  .detail-box {
+    @apply grid sm:grid-cols-3 gap-x-5 sm:gap-y-9 px-2 grid-cols-2 gap-y-6 sm:pt-0 pt-11;
+  }
+
+  .detail-box .black-box {
+    @apply flex flex-col items-center gap-2 py-4;
+  }
 }
