@@ -14,12 +14,16 @@
     @apply flex justify-between items-center p-5;
   }
 
+  form {
+    @apply max-[540px]:flex-col  max-[540px]:gap-3  max-[540px]:items-stretch;
+  }
+
   form + div {
     @apply sm:border-none border-t-2 border-gray-500 border-dashed;
   }
 
   input {
-    @apply bg-transparent outline-none border rounded-md w-44 py-2 px-4 border-r-0 rounded-tr-none rounded-br-none;
+    @apply bg-transparent outline-none border rounded-md w-44 max-[540px]:w-[100%] py-2 px-4 border-r-0 rounded-tr-none rounded-br-none;
   }
 
   img {
@@ -45,8 +49,12 @@
     @apply bg-[#000000b4] rounded-md;
   }
 
+  .responsive-box > div.black-box {
+    @apply max-[540px]:flex-col;
+  }
+
   .detail-box {
-    @apply grid sm:grid-cols-3 gap-x-5 sm:gap-y-9 px-2 grid-cols-2 gap-y-6 sm:pt-0 pt-11;
+    @apply grid sm:grid-cols-3 gap-x-5 sm:gap-y-9 px-2 grid-cols-2 gap-y-6 sm:pt-0 pt-11 max-[540px]:grid-cols-1;
   }
 
   .detail-box .black-box {

@@ -28,7 +28,7 @@ const Weather = () => {
       await axios
         .get(URL)
         .then((data) => {
-          console.log(data.data);
+          // console.log(data.data);
           const weather = data.data;
           setWeather({
             city: weather.name,
@@ -181,6 +181,10 @@ const Weather = () => {
               color: "white",
               border: "1px solid white",
               bgcolor: "gray",
+              marginInline: {
+                xs: "auto",
+                sm: "initial",
+              },
             }}
             style={{
               padding: "8px 0",
@@ -192,9 +196,9 @@ const Weather = () => {
             <b>&deg;</b> <span>{tempName}</span>
           </Button>
         </form>
-        <div className="black-box ">
+        <div className="black-box max-[540px]:gap-6">
           <h1 className="font-serif font-bold text-2xl">{weather.city}</h1>
-          <div>
+          <div className="max-[540px]:w-20">
             <img
               src={`https://openweathermap.org/img/wn/${weather.iconCode}@2x.png`}
               alt="weater image"
